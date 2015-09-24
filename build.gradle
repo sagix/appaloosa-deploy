@@ -4,7 +4,6 @@ version '1.0-SNAPSHOT'
 apply plugin: 'idea'
 apply plugin: 'groovy'
 apply plugin: 'java'
-apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
 
 repositories {
@@ -28,36 +27,9 @@ task sourceJar(type: Jar) {
     from sourceSets.main.allSource
 }
 
-bintray {
-    publications = ['Publication']
-
-    user = properties.getProperty('bintray.user')
-    key = properties.getProperty('bintray.apikey')
-
-    configurations = ['published', 'archives']
-
-    dryRun = false
-    publish = true
-
-    pkg {
-        repo = 'maven'
-        name = 'custom-searchable'
-
-        desc = 'This repository contains a library that aims to provide a custom searchable interface for android applications'
-
-        websiteUrl = 'https://github.com/...'
-        issueTrackerUrl = 'https://github.com/.../issues'
-        vcsUrl = 'https://github.com/....git'
-
-        licenses = ['The Apache Software License, Version 2.0']
-        labels = ['android', 'deployment', 'continous', 'UDD']
-        publicDownloadNumbers = true
-    }
-}
-
 publishing {
     publications {
-        Publication(MavenPublication) {
+        maven(MavenPublication) {
             groupId 'com.octo.nicolasmouchel'
             artifactId 'appaloosa-deploy'
             version '1.0-SNAPSHOT'
@@ -80,14 +52,6 @@ publishing {
         maven {
             // change to point to your repo, e.g. http://my.org/repo
             url "$buildDir/repo"
-        }
-
-        bintray {
-            url "https://api.bintray.com/maven/codearte/public/fairyland"
-            credentials {
-                username = bintrayUser
-                password = bintrayKey
-            }
         }
     }
 }
