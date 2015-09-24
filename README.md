@@ -5,10 +5,7 @@
 Add repositories to your project build.gradle
 
     repositories {
-            // for the plugin
-            maven {
-                url 'http://dl.bintray.com/sagix/maven'
-            }
+            jcenter()
             // for appaloosa API
             maven {
                 url 'https://github.com/joel1di1/joel1di1-mvn-repo/raw/master/releases/'
