@@ -1,14 +1,25 @@
 group 'com.octo.nicolasmouchel'
-version '1.0-SNAPSHOT'
+version '1.0'
+
+
+buildscript {
+    repositories {
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.3.1'
+    }
+}
 
 apply plugin: 'idea'
 apply plugin: 'groovy'
 apply plugin: 'java'
+apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
 
 repositories {
     mavenCentral()
-    maven{
+    maven {
         url uri('https://github.com/joel1di1/joel1di1-mvn-repo/raw/master/releases/')
     }
 }
@@ -32,20 +43,13 @@ publishing {
         maven(MavenPublication) {
             groupId 'com.octo.nicolasmouchel'
             artifactId 'appaloosa-deploy'
-            version '1.0-SNAPSHOT'
+            version '1.0'
 
             from components.java
 
             artifact sourceJar {
                 classifier "sources"
             }
-                repositories {
-                    repository {
-                        id 'myrepo'
-                        url 'http//my.repo.com'
-                    }
-                }
-
         }
     }
     repositories {
@@ -53,5 +57,25 @@ publishing {
             // change to point to your repo, e.g. http://my.org/repo
             url "$buildDir/repo"
         }
+    }
+}
+
+bintray {
+    user = bintrayUser
+    key = bintrayKey
+
+    dryRun = false
+    publish = true
+    publications = ['maven']
+    pkg {
+        repo = 'maven'         // The repository
+        name = 'appaloosa-deploy' // The package
+        desc = 'Gradle plugin to deploy applications on Appaloosa Store'
+        websiteUrl = 'https://github.com/sagix/appaloosa-deploy'
+        issueTrackerUrl = 'https://github.com/sagix/appaloosa-deploy/issues'
+        vcsUrl = 'https://github.com/sagix/appaloosa-deploy/issues.git'
+        licenses = ['ISC']
+        labels = ['appaloosa', 'deploy', 'continious', 'UDD']
+        publicDownloadNumbers = true
     }
 }

@@ -18,7 +18,7 @@ class AppaloosaDeployPlugin implements Plugin<Project> {
                 def client = new AppaloosaClient(extension.storeToken)
                 client.deployFile(
                         project.buildDir.absolutePath + "/outputs/apk/${apk.getApkName(project.name)}",
-                        description,
+                        descriptionVersion,
                         groupsName)
                 println "--End deploying--"
             }

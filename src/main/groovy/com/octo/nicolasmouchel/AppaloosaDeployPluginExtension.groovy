@@ -9,8 +9,6 @@ class AppaloosaDeployPluginExtension {
     @Input
     NamedDomainObjectContainer<AppaloosaDeployApks> apks
 
-
-
     void storeToken(String storeToken) {
         this.storeToken = storeToken
     }
@@ -23,9 +21,9 @@ class AppaloosaDeployPluginExtension {
 class AppaloosaDeployApks {
     final String name
     String buildName
-    String falvorName
+    String flavorName
     String apkName
-    String description
+    String descriptionVersion
     String groupsName
 
     AppaloosaDeployApks(String name) {
@@ -37,8 +35,8 @@ String getApkName(){return ''}
             return apkName
         }
         String buildedApkName = ''
-        if (falvorName != null) {
-            buildedApkName += falvorName + '/'
+        if (flavorName != null) {
+            buildedApkName += flavorName + '/'
         }
         buildedApkName += moduleName + '-'
         if (buildName != null) {
@@ -54,16 +52,16 @@ String getApkName(){return ''}
         this.buildName = buildName
     }
 
-    void falvorName(final String falvorName) {
-        this.falvorName = falvorName
+    void flavorName(final String flavorName) {
+        this.flavorName = flavorName
     }
 
     void apkName(final String apkName) {
         this.apkName = apkName
     }
 
-    void description(final String description) {
-        this.description = description
+    void descriptionVersion(final String descriptionVersion) {
+        this.descriptionVersion = descriptionVersion
     }
 
     void groupsName(final String groupsName) {
