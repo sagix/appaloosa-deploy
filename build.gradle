@@ -1,6 +1,5 @@
 group 'com.octo.nicolasmouchel'
-version '1.0'
-
+version '1.1'
 
 buildscript {
     repositories {
@@ -16,6 +15,8 @@ apply plugin: 'groovy'
 apply plugin: 'java'
 apply plugin: 'com.jfrog.bintray'
 apply plugin: 'maven-publish'
+
+sourceCompatibility = JavaVersion.VERSION_1_6
 
 repositories {
     mavenCentral()
@@ -43,7 +44,7 @@ publishing {
         maven(MavenPublication) {
             groupId 'com.octo.nicolasmouchel'
             artifactId 'appaloosa-deploy'
-            version '1.0'
+            version '1.1'
 
             from components.java
 
