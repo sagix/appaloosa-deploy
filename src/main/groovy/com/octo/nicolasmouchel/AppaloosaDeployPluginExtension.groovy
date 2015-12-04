@@ -34,11 +34,10 @@ String getApkName(){return ''}
         if (apkName != null) {
             return apkName
         }
-        String buildedApkName = ''
+        String buildedApkName = moduleName + '-'
         if (flavorName != null) {
-            buildedApkName += flavorName + '/'
+            buildedApkName += flavorName + '-'
         }
-        buildedApkName += moduleName + '-'
         if (buildName != null) {
             buildedApkName += buildName
         } else {

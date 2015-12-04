@@ -1,5 +1,5 @@
 group 'com.octo.nicolasmouchel'
-version '1.1'
+version '1.2'
 
 buildscript {
     repositories {
@@ -44,7 +44,7 @@ publishing {
         maven(MavenPublication) {
             groupId 'com.octo.nicolasmouchel'
             artifactId 'appaloosa-deploy'
-            version '1.1'
+            version '1.2'
 
             from components.java
 
