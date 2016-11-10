@@ -12,7 +12,7 @@ Add repositories to your project build.gradle
             }
         }
         dependencies {
-            classpath 'com.octo.nicolasmouchel:appaloosa-deploy:1.0'
+            classpath 'com.octo.nicolasmouchel:appaloosa-deploy:1.2'
         }
     }
 
