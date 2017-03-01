@@ -51,4 +51,10 @@ And apply plugin in your app build.gradle
                 groupsName 'everybody'
             }
         }
+        proxy {
+            host 'proxy-hostname'
+            port proxy-portnumber
+            user 'proxy-username'
+            pass 'proxy-password'
+        }
     }
