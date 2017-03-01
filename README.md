@@ -12,7 +12,7 @@ Add repositories to your project build.gradle
             }
         }
         dependencies {
-            classpath 'com.octo.nicolasmouchel:appaloosa-deploy:1.2'
+            classpath 'com.octo.nicolasmouchel:appaloosa-deploy:1.3'
         }
     }
 
@@ -50,5 +50,11 @@ And apply plugin in your app build.gradle
                 descriptionVersion ''
                 groupsName 'everybody'
             }
+        }
+        proxy {
+            host 'proxy-hostname'
+            port proxy-portnumber
+            user 'proxy-username'
+            pass 'proxy-password'
         }
     }
