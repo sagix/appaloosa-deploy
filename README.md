@@ -1,6 +1,6 @@
-#Appaloosa gradle plugin
+# Appaloosa gradle plugin
 
-##INSTALLATION
+## INSTALLATION
 
 Add repositories to your project build.gradle
 
@@ -20,9 +20,9 @@ And apply plugin in your app build.gradle
 
     apply plugin: 'appaloosa-deploy'
     
-##CONFIGURATION
+## CONFIGURATION
 
-###BASIC
+### BASIC
     appaloosaDeploy{
             storeToken 'your-store-token'
             apks {
@@ -33,7 +33,7 @@ And apply plugin in your app build.gradle
             }
     }
 
-###COMPLETE
+### COMPLETE
 
     appaloosaDeploy{
         storeToken 'your-store-token'
