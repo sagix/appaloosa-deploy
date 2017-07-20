@@ -20,9 +20,6 @@ sourceCompatibility = JavaVersion.VERSION_1_6
 
 repositories {
     mavenCentral()
-    maven {
-        url uri('https://github.com/joel1di1/joel1di1-mvn-repo/raw/master/releases/')
-    }
 }
 
 dependencies {
@@ -30,7 +27,7 @@ dependencies {
     compile gradleApi()
     compile localGroovy()
 
-    compile 'com.appaloosa-store:appaloosa-client:1.2.0'
+    compile 'com.appaloosa-store:appaloosa-client:1.3'
 
     testCompile group: 'junit', name: 'junit', version: '4.11'
 }
@@ -44,7 +41,7 @@ publishing {
         maven(MavenPublication) {
             groupId 'com.octo.nicolasmouchel'
             artifactId 'appaloosa-deploy'
-            version '1.3'
+            version '1.4'
 
             from components.java
 
