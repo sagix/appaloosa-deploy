@@ -4,15 +4,9 @@
 
 Add repositories to your project build.gradle
 
-    repositories {
-            jcenter()
-            // for appaloosa API
-            maven {
-                url 'https://github.com/joel1di1/joel1di1-mvn-repo/raw/master/releases/'
-            }
-        }
+    buildscript {
         dependencies {
-            classpath 'com.octo.nicolasmouchel:appaloosa-deploy:1.3'
+            classpath 'com.octo.nicolasmouchel:appaloosa-deploy:1.4'
         }
     }
 
