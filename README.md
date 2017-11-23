@@ -6,7 +6,7 @@ Add repositories to your project build.gradle
 
     buildscript {
         dependencies {
-            classpath 'com.octo.nicolasmouchel:appaloosa-deploy:1.4'
+            classpath 'com.octo.nicolasmouchel:appaloosa-deploy:1.5'
         }
     }
 
@@ -37,6 +37,7 @@ And apply plugin in your app build.gradle
                 flavorName 'full'
                 descriptionVersion 'appaloosa try'
                 groupsName 'test-only'
+                changeLog 'new features!'
             }
     
             demo {

@@ -1,6 +1,12 @@
 Change Log
 ==========
 
+
+Version 1.5 *(2017-07-20)*
+----------------------------
+
+* Fix usage of change log with appaloosa-client 1.3
+
 Version 1.4 *(2017-07-20)*
 ----------------------------
 

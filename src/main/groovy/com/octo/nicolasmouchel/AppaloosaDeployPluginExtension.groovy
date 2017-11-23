@@ -1,6 +1,5 @@
 package com.octo.nicolasmouchel
 
-import groovy.transform.ToString
 import org.gradle.api.NamedDomainObjectContainer
 import org.gradle.api.tasks.Input
 
@@ -34,6 +33,7 @@ class AppaloosaDeployApks {
     String apkName
     String descriptionVersion
     String groupsName
+    String changeLog
 
     AppaloosaDeployApks(String name) {
         this.name = name
@@ -76,6 +76,10 @@ class AppaloosaDeployApks {
 
     void groupsName(final String groupsName) {
         this.groupsName = groupsName
+    }
+
+    void changeLog(final String changeLog){
+        this.changeLog = changeLog
     }
 }
 

@@ -14,7 +14,7 @@ class AppaloosaDeployPlugin implements Plugin<Project> {
         extension.apks = apks
 
         extension.apks.all { apk ->
-            project.task("appaloosaDeploy${name.capitalize()}", group: 'Deploy') << {
+            project.task("appaloosaDeploy${apk.name.capitalize()}", group: 'Deploy') << {
                 println "--Start deploying--"
                 def client = new AppaloosaClient(extension.storeToken)
                 if (extension.proxy != null) {
@@ -34,8 +34,10 @@ class AppaloosaDeployPlugin implements Plugin<Project> {
                 }
                 client.deployFile(
                         project.buildDir.absolutePath + "/outputs/apk/${apk.getApkName(project.name)}",
-                        descriptionVersion,
-                        groupsName)
+                        apk.descriptionVersion,
+                        apk.groupsName,
+                        apk.changeLog == null ? "" : apk.changeLog
+                )
                 println "--End deploying--"
             }
         }
